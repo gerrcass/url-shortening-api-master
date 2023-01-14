@@ -1,0 +1,119 @@
+@import "../../styles/mixins";
+
+.header {
+  padding: 1rem;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+  }
+  &__navbar ul {
+    display: none;
+  }
+}
+
+.mobilemenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  &__line {
+    display: block;
+    width: 1.8rem;
+    height: 4px;
+    background-color: $theme-grayish-violet;
+    border-radius: 1rem;
+  }
+  &__up {
+    transform-origin: center center;
+    transition: transform 0.4s ease-in-out;
+  }
+  &__middle {
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  &__down {
+    transform-origin: center center;
+    transition: transform 0.4s ease-in-out;
+  }
+}
+
+.mobilemenu__open {
+  .mobilemenu__up {
+    transform: rotate(45deg) translate(0.6rem, 0.5rem);
+  }
+  .mobilemenu__middle {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  .mobilemenu__down {
+    transform: rotate(-45deg) translate(0.3rem, -0.2rem);
+  }
+}
+
+@include media-responsive($lg) {
+  .header {
+    padding: 2rem 0;
+
+    &__container {
+      max-width: $lg;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: flex-start;
+    }
+
+    &__navbar {
+      flex: 1;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    ul:first-child {
+      margin-left: 2.5rem;
+    }
+
+    &__link {
+      color: $theme-grayish-violet;
+      font-weight: bold;
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: $theme-dark-blue;
+      }
+    }
+
+    &__signup {
+      color: $theme-white;
+      padding: 0.5rem 1.5rem;
+      background-color: $theme-cyan;
+      border-radius: 3rem;
+      font-weight: bold;
+      transition: background-color 0.22s;
+
+      @include media-hover {
+        &:hover {
+          background-color: lighten($theme-cyan, 30%);
+          color: $theme-white;
+        }
+      }
+    }
+
+    &__linkspace {
+      margin-left: auto;
+    }
+  }
+  .mobilemenu {
+    display: none;
+  }
+}

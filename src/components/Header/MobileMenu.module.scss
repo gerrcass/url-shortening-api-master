@@ -1,0 +1,72 @@
+@import "../../styles/mixins";
+
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 1rem;
+  background-color: $theme-dark-violet;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+
+  &__link {
+    color: $theme-white;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  @include media-hover {
+    &__link:hover {
+      color: $theme-cyan;
+    }
+  }
+  &__link:active {
+    color: $theme-cyan;
+  }
+
+  &__linkspace {
+    border-top: 1px groove $theme-grayish-violet;
+    margin: 0 1.5rem;
+    padding-top: 1.5rem;
+  }
+  &__signup {
+    display: block;
+    margin: 0 1.5rem;
+    color: $theme-white;
+    padding: 0.5rem 1.5rem;
+    background-color: $theme-cyan;
+    border-radius: 3rem;
+    font-weight: bold;
+    transition: background-color 0.22s;
+    @include media-hover {
+      &:hover {
+        background-color: lighten($theme-cyan, 30%);
+        color: $theme-white;
+      }
+    }
+    &:active {
+      background-color: lighten($theme-cyan, 30%);
+      color: $theme-white;
+    }
+  }
+}
+
+@include media-responsive($lg) {
+  .container {
+    display: none;
+  }
+}

@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
         <meta name="description" content="Frontend Mentor Challenge" />
 
         <link
@@ -17,6 +17,7 @@ export default function Document() {
       </Head>
       <body>
         <Main />
+        <div id="modal" />
         <NextScript />
       </body>
     </Html>
