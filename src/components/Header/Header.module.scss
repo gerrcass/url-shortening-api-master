@@ -1,7 +1,7 @@
 @import "../../styles/mixins";
 
 .header {
-  padding: 1rem;
+  padding: 2rem 1.5rem;
   &__container {
     display: flex;
     align-items: center;
@@ -106,6 +106,10 @@
           background-color: lighten($theme-cyan, 30%);
           color: $theme-white;
         }
+      }
+      &:active {
+        background-color: lighten($theme-cyan, 30%);
+        color: $theme-white;
       }
     }
 
