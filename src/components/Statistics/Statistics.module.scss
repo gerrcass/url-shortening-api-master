@@ -1,0 +1,166 @@
+@import "../../styles/mixins";
+
+.statistics {
+  padding: 2rem 0;
+  color: $theme-dark-blue;
+  background-color: $theme-light-gray;
+
+  &__header {
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    //border: 1px solid black;
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: -2px;
+      padding-bottom: 1rem;
+    }
+    p {
+      color: $theme-grayish-violet;
+    }
+  }
+
+  &__cardlist {
+    position: relative;
+    //background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+
+    //justify-content: center;
+    padding: 0rem 1rem;
+
+    article {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 20rem;
+      background-color: $theme-white;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      padding-bottom: 2.5rem;
+      margin: 3rem auto 2rem;
+      z-index: 1;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      background-color: $theme-dark-violet;
+      margin-top: -3.5rem;
+      margin-bottom: 1rem;
+      //top: -3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.8rem;
+    }
+    p {
+      color: $theme-grayish-violet;
+      margin-top: 1rem;
+    }
+    .firstcard {
+      span {
+        background-image: url("/images/icon-brand-recognition.svg");
+      }
+    }
+    .middlecard {
+      span {
+        background-image: url("/images/icon-detailed-records.svg");
+      }
+    }
+    .lastcard {
+      span {
+        background-image: url("/images/icon-fully-customizable.svg");
+      }
+    }
+  }
+
+  &__cardlist::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    width: 0.5rem;
+    height: 90%;
+    transform: translateX(-50%);
+    background-color: $theme-cyan;
+  }
+}
+
+@include media-responsive($lg) {
+  .statistics {
+    &__header {
+      max-width: $lg;
+      margin: 0 auto;
+      p {
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+    &__cardlist {
+      max-width: $lg;
+      margin: 2rem auto;
+      flex-direction: row;
+      gap: 1.5rem;
+      padding: 0;
+      height: 20rem;
+
+      article {
+        max-width: 21rem;
+        max-height: 17rem;
+        padding: 1rem 0.8rem 2rem 1.3rem;
+        text-align: left;
+        margin: 0;
+      }
+
+      span {
+        left: 14%;
+      }
+
+      .firstcard {
+        align-self: flex-start;
+      }
+      .middlecard {
+        align-self: center;
+      }
+      .lastcard {
+        align-self: flex-end;
+      }
+      .middlecard {
+        span {
+          background-image: url("/images/icon-detailed-records.svg");
+        }
+      }
+      .lastcard {
+        span {
+          background-image: url("/images/icon-fully-customizable.svg");
+        }
+      }
+    }
+    &__cardlist::after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      width: 90%;
+      height: 0.5rem;
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import "../../styles/mixins";
+
+.link {
+  padding: 4rem 1rem;
+  margin-top: 3rem;
+  background-color: $theme-light-gray;
+  &__container {
+    position: relative;
+    top: -9rem;
+    background-image: url("/images/bg-shorten-mobile.svg");
+    background-color: $theme-dark-violet;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-size: cover;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    input {
+      color: $theme-dark-blue;
+      border-radius: 0.5rem;
+      border-color: transparent;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button {
+      display: block;
+      border: none;
+      font-size: 1.2rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+
+      cursor: pointer;
+      background-color: $theme-cyan;
+      color: $theme-white;
+      transition: background-color 0.2s ease-in-out;
+      @include media-hover {
+        &:hover {
+          background-color: lighten($theme-cyan, 20%);
+        }
+      }
+    }
+  }
+}
+
+@include media-responsive($md) {
+  .link {
+    &__container {
+      max-width: $md;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@include media-responsive($lg) {
+  .link {
+    &__container {
+      max-width: $lg;
+      background-image: url("/images/bg-shorten-desktop.svg");
+
+      form {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+
+      background-color: $theme-dark-violet;
+      border-radius: 0.5rem;
+      padding: 3.5rem;
+
+      background-size: cover;
+      background-position: 0 0;
+      //background-position: right 0 top 0;
+
+      input {
+        flex: 1;
+        font-size: 1.25rem;
+        padding: 0.8rem 1.8rem;
+      }
+      /* button {
+        
+      } */
+    }
+  }
+}

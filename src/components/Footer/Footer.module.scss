@@ -1,0 +1,82 @@
+@import "../../styles/mixins";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $theme-very-dark-violet; //(?)👉 hsl(266, 10%, 14%)
+
+  &__logo {
+    fill: $theme-white;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  &__main {
+    padding: 4rem 0 1rem;
+    h3 {
+      color: $theme-white;
+      text-align: center;
+    }
+    li {
+      text-align: center;
+    }
+    a {
+      //color: $theme-gray;
+      color: $theme-grayish-violet;
+    }
+    a:hover,
+    a:active {
+      color: $theme-cyan;
+    }
+  }
+  &__listitems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__attribution {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: $theme-grayish-violet;
+    a {
+      color: $theme-white;
+    }
+  }
+}
+
+@include media-responsive($lg) {
+  .footer {
+    &__main {
+      max-width: $lg;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 0;
+    }
+
+    &__listitems {
+      align-items: flex-start;
+      ul {
+        align-items: flex-start;
+      }
+    }
+    &__social {
+      align-self: flex-start;
+    }
+  }
+}
