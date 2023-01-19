@@ -28,7 +28,9 @@
     }
     a {
       display: block;
-      width: fit-content;
+      //width: fit-content;
+      width: 12rem;
+      text-align: center;
       color: $theme-white;
       padding: 0.8rem 2.5rem;
       background-color: $theme-cyan;
@@ -88,7 +90,8 @@
       }
       a {
         display: block;
-        width: fit-content;
+        //width: fit-content;
+        width: 13rem;
         color: $theme-white;
         padding: 0.8rem 2rem;
         margin: 1.5rem 0 0 1.5rem;
@@ -144,7 +147,8 @@ $margin: calc((100vw - $lg) / 2);
       }
       a {
         display: block;
-        width: fit-content;
+        //width: fit-content;
+        width: 14rem;
         color: $theme-white;
         padding: 0.8rem 2rem;
         margin: 1.5rem 0 0 0;
