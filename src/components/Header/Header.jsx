@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <header className={classes.header}>
             <div className={classes.header__container}>
-                <a href="#" className={classes.header__logo}><Logo /></a>
+                <a href="#" className={classes.header__logo} aria-label="Logo"><Logo /></a>
                 <nav className={classes.header__navbar}>
                     <ul>
                         <li><a href="#" className={classes.header__link}>Features</a></li>
