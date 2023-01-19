@@ -45,7 +45,6 @@
     padding: 0.8rem 1.8rem;
     border-radius: 0.5rem;
     font-weight: bold;
-    //border: 2px solid $theme-cyan;
     border: none;
 
     cursor: pointer;
@@ -145,7 +144,7 @@
       }
     }
     &__submit {
-      width: 12rem;
+      width: 13rem;
       font-size: 1rem;
       height: fit-content;
     }
@@ -176,6 +175,7 @@
     }
     &__submit {
       font-size: 1.2rem;
+      width: 15rem;
     }
     &__input {
       input {
