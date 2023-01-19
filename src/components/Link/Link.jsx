@@ -20,24 +20,6 @@ const apiErrorCode = {
     10: 'Trying to shorten a disallowed Link',
 }
 
-
-const linkShortened = []
-const validate = values => {
-    const errors = {};
-
-    if (!values.url) {
-        errors.url = 'Please add a link';
-    } else if (!/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(values.url)) {
-        errors.url = 'Invalid link';
-    }
-
-    const isInList = linkShortened.includes(values.url)
-    if (isInList) errors.url = 'This link has already been shortened'
-
-    return errors;
-};
-
-
 const Link = () => {
     const { links, saveLink } = useLinks()
 
@@ -45,14 +27,26 @@ const Link = () => {
         initialValues: {
             url: ''
         },
-        validate,
+        validate: values => {
+            const errors = {};
+
+            if (!values.url) {
+                errors.url = 'Please add a link';
+            } else if (!/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i.test(values.url)) {
+                errors.url = 'Invalid link';
+            }
+
+            const isInList = links.some(link => link.url === values.url)
+            if (isInList) errors.url = 'This link has already been shortened'
+
+            return errors;
+        },
         onSubmit: async ({ url }, { resetForm }) => {
             try {
                 const response = await fetch(`${shrtApi}/shorten?url=${url}`)
                 const data = await response.json()
                 if (response.ok) {
                     saveLink({ url, shortenedUrl: data.result.full_short_link })
-                    linkShortened.push(url)
                     resetForm();
                 } else {
                     formik.setFieldError("url", apiErrorCode[data.error_code]);
