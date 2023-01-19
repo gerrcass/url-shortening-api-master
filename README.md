@@ -40,11 +40,9 @@ Users should be able to:
 
 ### Built with
 
-Built with:
-
 - [Next.js](https://nextjs.org/) - React framework
 - [Formik](https://formik.org/) - Open Source form library for React
-- [ShrtCode Link Shortener API](https://shrtco.de/docs) - The privacy-friendly URL Shortener
+- [ShrtCode Link Shortener API](https://shrtco.de/docs) - A privacy-friendly URL Shortener
 - [Sass](https://sass-lang.com/) - Preprocessor scripting language for CSS
 - Using localStorage on custom hook
 - Mobile-first workflow
