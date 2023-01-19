@@ -14,6 +14,7 @@ const Hero = () => {
                 height={482}
                 src='images/illustration-working.svg'
                 alt='Hero image'
+                priority={true}
             />
         </section>
     )

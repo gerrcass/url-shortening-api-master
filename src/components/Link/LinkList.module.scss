@@ -1,0 +1,90 @@
+@import "../../styles/mixins";
+
+.linkitem {
+  display: flex;
+  flex-direction: column;
+  background-color: $theme-white;
+  border-radius: 0.5rem;
+  color: $theme-dark-blue;
+  margin-top: 1.5rem;
+
+  &__link {
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__shortenlink {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-top: 1px solid $theme-light-gray;
+    color: $theme-cyan;
+
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+  }
+  &__button {
+    display: block;
+    width: 100%;
+
+    background-color: $theme-cyan;
+    color: $theme-white;
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    transition: all 0.22s;
+
+    @include media-hover {
+      &:hover {
+        background-color: lighten($theme-cyan, 30%);
+        color: $theme-white;
+      }
+    }
+  }
+  &_buttoncolor {
+    background-color: $theme-dark-violet;
+  }
+}
+
+@include media-responsive($md) {
+  .linkitem {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    &__link {
+      font-size: 1rem;
+    }
+    &__shortenlink {
+      flex-direction: row;
+      align-items: center;
+      font-weight: bold;
+      gap: 1rem;
+      padding: 0 1rem;
+      border: none;
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      width: 5rem;
+      padding: 0.6rem 1.5rem;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+}
+@include media-responsive($lg) {
+  .linkitem {
+    max-width: $lg;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
