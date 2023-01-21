@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import classes from './Hero.module.scss'
 import Image from 'next/image'
 
@@ -7,7 +9,7 @@ const Hero = () => {
             <div className={classes.hero__text}>
                 <h1>More than just shorter links</h1>
                 <p>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
-                <a href="">Get Started</a>
+                <Link href="">Get Started</Link>
             </div>
             <Image
                 width={733}

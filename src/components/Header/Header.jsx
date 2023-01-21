@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { useState } from "react"
 
 import classes from "./Header.module.scss"
@@ -13,17 +14,17 @@ const Header = () => {
     return (
         <header className={classes.header}>
             <div className={classes.header__container}>
-                <a href="#" className={classes.header__logo} aria-label="Logo"><Logo /></a>
+                <Link href="#" className={classes.header__logo} aria-label="Logo"><Logo /></Link>
                 <nav className={classes.header__navbar}>
                     <ul>
-                        <li><a href="#" className={classes.header__link}>Features</a></li>
-                        <li><a href="#" className={classes.header__link}>Pricing</a></li>
-                        <li><a href="#" className={classes.header__link}>Resources</a></li>
+                        <li><Link href="#" className={classes.header__link}>Features</Link></li>
+                        <li><Link href="#" className={classes.header__link}>Pricing</Link></li>
+                        <li><Link href="#" className={classes.header__link}>Resources</Link></li>
                         <li className={classes.header__linkspace}>
-                            <a href="#" className={classes.header__link}>Login</a>
+                            <Link href="#" className={classes.header__link}>Login</Link>
                         </li>
                         <li>
-                            <a href="#" className={`${classes.header__link} ${classes.header__signup}`}>Sign Up</a>
+                            <Link href="#" className={`${classes.header__link} ${classes.header__signup}`}>Sign Up</Link>
                         </li>
                     </ul>
                     <button

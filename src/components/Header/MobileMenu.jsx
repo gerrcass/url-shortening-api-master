@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { Modal } from "../Modal/Modal"
 import classes from "./MobileMenu.module.scss"
 
@@ -10,11 +12,11 @@ const MobileMenu = ({ setOpenModal }) => {
             >
                 <div className={classes.container}>
                     <ul onClick={(e) => e.stopPropagation()} className={classes.menu}>
-                        <li><a href="#" className={classes.menu__link}>Features</a></li>
-                        <li><a href="#" className={classes.menu__link}>Pricing</a></li>
-                        <li><a href="#" className={classes.menu__link}>Resources</a></li>
-                        <li className={classes.menu__linkspace}><a href="#" className={classes.menu__link}>Login</a></li>
-                        <li><a href="#" className={`${classes.menu__link} ${classes.menu__signup}`}>Sign Up</a></li>
+                        <li><Link href="#" className={classes.menu__link}>Features</Link></li>
+                        <li><Link href="#" className={classes.menu__link}>Pricing</Link></li>
+                        <li><Link href="#" className={classes.menu__link}>Resources</Link></li>
+                        <li className={classes.menu__linkspace}><Link href="#" className={classes.menu__link}>Login</Link></li>
+                        <li><Link href="#" className={`${classes.menu__link} ${classes.menu__signup}`}>Sign Up</Link></li>
                     </ul>
                 </div>
             </Modal>

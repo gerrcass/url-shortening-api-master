@@ -17,7 +17,6 @@ const Modal = ({ children, selector }) => {
 
     const isNarrowScreen = useMediaQuery('(max-width: 1024px)')
     useEffect(() => {
-        console.log('isNarrowScreen:', isNarrowScreen)
         if (isNarrowScreen) {
             bodyRef.current.style.overflow = 'hidden'
         } else {

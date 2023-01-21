@@ -44,7 +44,8 @@ Users should be able to:
 - [Formik](https://formik.org/) - Open Source form library for React
 - [ShrtCode Link Shortener API](https://shrtco.de/docs) - A privacy-friendly URL Shortener
 - [Sass](https://sass-lang.com/) - Preprocessor scripting language for CSS
-- Using localStorage on custom hook
+- BEM naming convention
+- Using localStorage & custom hook
 - Mobile-first workflow
 - Semantic HTML5 markup
 
